@@ -25,9 +25,5 @@ jobs:
           command: |
              I will exit fail status
              exit 1
-      - run:
-          name: Run on fail status
-          command: |
-             I am result of above failed job
-           when: on_fail
+      
           
