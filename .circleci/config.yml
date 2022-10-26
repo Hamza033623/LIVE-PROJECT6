@@ -20,4 +20,14 @@ jobs:
           name: deploy
           command: |
             NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
-
+      - run:
+          name: Run commands
+          command: |
+             I will exit fail status
+             exit 1
+      - run:
+          name: Run on fail status
+          command: |
+             I am result of above failed job
+           when: on_fail
+          
