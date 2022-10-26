@@ -1,11 +1,14 @@
-version: 1.9
+version: 2.1
 
 jobs:
   build:
     docker:
       - image: circleci/node:6.10.1
     steps:
-      - checkout
+      - checkout 
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
       - run:
           name: submodules
           command: 'git submodule update --init'
